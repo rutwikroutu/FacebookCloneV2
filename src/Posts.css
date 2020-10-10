@@ -1,0 +1,25 @@
+.posts {
+    flex: 1;
+    min-width: fit-content;
+    height: 700px;
+    margin-left:50%;
+}
+
+@media screen and (max-width: 1280px) {
+    .posts {
+        margin-left:0%;
+    }
+  }
+
+.posts {
+    overflow-y: scroll;
+}
+
+.posts::-webkit-scrollbar {
+    display:none;
+}
+
+.posts {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

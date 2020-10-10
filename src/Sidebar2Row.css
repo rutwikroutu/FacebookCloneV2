@@ -1,0 +1,25 @@
+.sidebar2Row {
+    display: flex;
+    flex-direction: row;
+    margin-left: 16px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.sidebar2Row:hover {
+    background-color: #2F3031;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.avatar {
+    height: 35px !important;
+    width: 35px !important;
+}
+
+.sidebar2Row h1 {
+color: #fff;
+font-size: 15px;
+font-weight: 500;
+margin-top: 5px;
+}

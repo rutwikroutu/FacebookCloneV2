@@ -1,26 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Login from "./Login";
+import Register from "./Register";
+import Sidebar from './Sidebar';
+import Sidebar2 from './Sidebar2';
+import HomeHeader from "./HomeHeader";
+import Posts from './Posts';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { auth } from "./firebase";
+import Profile from './Profile';
 
 function App() {
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+
+      if (authUser) {
+        setUser(authUser);
+      } else {
+        setUser(false);
+      }
+    })
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    < div >
+      < div className="app" >
+        <Router>
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+
+            <Route path="/register">
+              <Register />
+            </Route>
+
+            <Route path="/:username/:uid">
+              <HomeHeader user={user} />
+              <Profile user={user} />
+            </Route>
+
+            <Route path="/">
+              <HomeHeader user={user} selected />
+              <div className="app__page">
+                <Sidebar user={user} />
+                <div className="app__posts">
+                  <Posts user={user} />
+                </div>
+                <Sidebar2 />
+              </div>
+            </Route>
+          </Switch>
+        </Router>
+      </div >
+    </div >
   );
 }
 
-export default App;
+export default App

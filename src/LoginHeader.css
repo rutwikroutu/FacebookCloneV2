@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #3F5D9A;
+    height: 83px;
+    overflow: hidden;
+}
+
+.header__logo {
+    height: 78px;
+    object-fit: contain;
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.header__button {
+    width: 138px;
+    height: 30px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 9px;
+    padding-top: 7px;
+    border-radius: 2px;
+    background-color: #42B72A;
+    border: none;
+    position: relative;
+    float: left;
+    display: flex;
+    margin-right: 770px;
+}
+
+.header__button:hover {
+    background-color: #32971e;
+    transition: 0.2s;
+}

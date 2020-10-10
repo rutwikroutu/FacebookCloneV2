@@ -1,0 +1,48 @@
+.sidebar {
+    flex: 0.2;
+    margin-top: 20px;
+}
+
+.sidebar .hr { 
+    margin-left: 16px;
+    margin-bottom: 10px;
+    margin-right: 16px;
+    margin-top: 8px;
+    border-bottom: 2px solid #3E4042;
+}
+
+.policies {
+    display: flex;
+    flex-direction: row;
+    color: #A3A6AC;
+    width: 260px;
+    margin-left: 16px;
+    flex-wrap: wrap;
+    margin-right: 16px;
+}
+
+.policies p {
+    font-weight: 400;
+    font-size: 13px;
+    color: #b0b3b8;
+}
+
+.ads {
+    background-image: url(https://facebook.com/rsrc.php/v3/yH/r/hD_JBkCe96v.png);
+    background-size: 33px 1483px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left:3px;
+    margin-top:2px;
+    width: 12px;
+    height: 12px;
+    background-position: -17px -1203px;
+    vertical-align: -0.25em;
+    -webkit-filter: invert(62%) sepia(98%) saturate(12%) hue-rotate(175deg) brightness(90%) contrast(96%);
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}

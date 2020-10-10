@@ -1,0 +1,256 @@
+.profile__topSection {
+    background-color: #242526;
+    height: fit-content
+}
+
+.profile__coverPhoto {
+    background-color: #18191A;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 190px;
+    z-index: 0;
+}
+
+.profileAvatar {
+    margin-left: 42%;
+    height: 160px !important;
+    width: 160px !important;
+    border: 5px solid #242526;
+    bottom: -20px;
+    margin-bottom: -20px;
+    user-select: none !important;
+-moz-user-select: none !important;
+-webkit-user-drag: none !important;
+-webkit-user-select: none !important;
+-ms-user-select: none ;
+border-radius: 200px;
+cursor: pointer;
+}
+
+.inputImage {
+    display: none;
+}
+
+.modalInit h1 {
+    color: white !important;
+}
+
+.profileHead2 p {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.profileHead2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileHead2 button {
+    background-color: #1E87DC;
+    border: none;
+    width: 100px;height: 40px;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+
+.profileHead2 button:hover {
+    background-color: #2276bb;
+}
+
+
+.buttons {
+    display: flex;
+    margin-left: 30%;
+    flex-direction: row;
+}
+
+
+.progress {
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.profile__topSection h1 {
+    text-align: center;
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.bio {
+    text-align: center;
+    color: #2e89ff;
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.bio:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hr4 {
+    height: 1px;
+    width: 100%;
+    background-color: #3E4042;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.profileHeader__options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profileHeader__left ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.profileHeader__left ul li {
+    margin: 0;
+    font-size: 15px;
+    color: #b0b3b8;
+    font-weight: 600;
+    border-radius: 5px !important;
+    margin-bottom: 10px;
+}
+
+.profileHeader__left ul li:hover {
+    background-color: #3A3B3C !important;
+}
+
+
+
+.profileHeader__left ul .selected {
+color: #2E89FF;
+border-radius: 0px !important;
+border-bottom: 3px solid #2E89FF;
+margin-left: 45%;
+margin-bottom: 0px !important;
+}
+
+.profileHeader__left ul .selected:hover {
+    background-color: transparent !important;
+}
+
+.rect img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    -webkit-filter: invert(100%);
+}
+
+.rect {
+    background-color: #3A3B3C;
+    padding-right: 5px;
+    border-radius: 10px;
+    margin-bottom: 25px !important;
+    margin-left: 10px !important;
+}
+
+
+.rect p {
+    color: white;
+    width: 80px;
+}
+
+.rect.addFriend {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+
+  .postsAndIntro {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .postAndWatch {
+      display: flex;
+      flex-direction: column;
+      flex: 0.6;
+      margin-left: 20px;
+  }
+
+  .bioFields {
+      display: none;
+      flex-direction: column;
+      place-items: center;
+  }
+
+  .bioInput {
+    background-color: #3A3B3C;
+    border: none;
+    min-height: 50px;
+    height: fit-content;
+    outline: none;
+    border-radius: 5px;
+    width: 200px;
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-weight: 700;
+  }
+
+  .bioFields p {
+      font-weight: 400;
+      font-size: 13px;
+      color: #b0c4d8;
+      float: right;
+      margin-left: 40px;
+  }
+
+  .cancelAndSaveButtons button {
+      background-color: #3A3B3C;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      margin-left: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+  }
+
+  .cancelAndSaveButtons button:hover {
+    background-color: #535353;
+  }
+
+  .cancelAndSaveButtons {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      float: right;
+      margin-left: 50px;
+  }
+
+  .saveButton {
+      opacity: 0.4;
+      outline: none;
+  }
+
+  .saveButton:hover {
+      background-color: #3A3B3C;
+  }
+
+  .bioText {
+      text-align: center;
+      color: #AAADB2;
+  }
