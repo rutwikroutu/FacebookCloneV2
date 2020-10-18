@@ -4,18 +4,12 @@ import SidebarRow from './SidebarRow';
 import { Link } from 'react-router-dom'
 
 function Sidebar({ user }) {
-    const [noDisplay, setNoDisplay] = useState(true);
-    var photoURL = user?.photoURL;
-    if (photoURL == null) {
-        photoURL = "https://scontent.fhyd14-1.fna.fbcdn.net/v/t1.30497-1/c43.0.148.148a/p148x148/84241059_189132118950875_4138507100605120512_n.jpg?_nc_cat=1&_nc_sid=dbb9e7&_nc_ohc=MmZ6y2shMKAAX-Uy2mI&_nc_ht=scontent.fhyd14-1.fna&oh=facf461c14a4c10819ed8dd373adfb48&oe=5F740D9E";
-    }
-
     const url = '/' + user.displayName + '/' + user.uid;
 
     return (
         <div className="sidebar">
             <Link to={url}>
-                <SidebarRow avatar ImageLink={photoURL} title={user?.displayName} />
+                <SidebarRow avatar ImageLink={user?.photoURL} title={user?.displayName} />
             </Link>
             <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/7_gcmlwrelX.png" title="COVID-19 Information Centre" />
             <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/tSXYIzZlfrS.png" title="Find Friends" />

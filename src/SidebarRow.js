@@ -1,7 +1,7 @@
 import React from 'react'
 import './SidebarRow.css';
 
-function SidebarRow({ ImageLink, title, dropdown, avatar, url }) {
+function SidebarRow({ ImageLink, title, dropdown, avatar }) {
     return (
         <div className={`sidebarRow`}>
             <img src={ImageLink} alt="" className={`sidebarRow__icon ${avatar && "avatar"} ${dropdown && 'vanish'}`} />

@@ -248,7 +248,7 @@ function Profile({ user }) {
                             post.username !== username ? (
                                 console.log()
                             ) : (
-                                    < Post key={id} postId={id} posterImage={post.posterImage} origuser={user?.displayName} username={post.username} userId={user.uid} caption={post.caption} imageUrl={post.imageUrl} noLikes={post.noLikes} user={user} />
+                                < Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} noLikes={post.noLikes} postUserId={post.uid} />
                                 )
                         ))
                     }

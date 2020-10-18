@@ -6,11 +6,10 @@ import firebase from "firebase";
 import './ImageUpload.css';
 import CloseIcon from '@material-ui/icons/Close';
 
-function ImageUpload({ username }) {
+function ImageUpload() {
 
     const user = firebase.auth().currentUser;
     const [open, setOpen] = useState(false);
-    const [comment, setComment] = useState('');
     const [image, setImage] = useState('');
     const [imageURL, setImageURL] = useState('');
     const [caption, setCaption] = useState('');
@@ -64,9 +63,10 @@ function ImageUpload({ username }) {
                 db.collection("posts").add({
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     caption: caption,
-                    imageUrl: image,
+                    imageUrl: "",
                     noLikes: noLikes,
-                    username: user?.displayName
+                    username: user?.displayName,
+                    uid: user?.uid
                 });
                 handleClose();
                 setProgress(0);
@@ -98,7 +98,7 @@ function ImageUpload({ username }) {
                                     imageUrl: url,
                                     noLikes: noLikes,
                                     username: user?.displayName,
-                                    posterImage: user?.photoURL
+                                    uid: user?.uid
                                 });
                                 handleClose();
                                 setProgress(0);
@@ -179,6 +179,7 @@ function ImageUpload({ username }) {
                 </div>
             </div>
         </div>
+        //Are you ready to build the most updated Facebook Version using React JS and Firebase ? You are in the right course. The only pre-requisite is the previous course which is Facebook Clone V1. So, whenever you are ready, click that enroll button to enroll for this course !
     )
 }
 

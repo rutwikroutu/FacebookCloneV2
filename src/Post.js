@@ -3,13 +3,27 @@ import './Post.css';
 import { Avatar } from '@material-ui/core';
 import { storage, db } from './firebase';
 import firebase from "firebase";
+import {Link} from 'react-router-dom';
 
-function Post({ postId, origuser, posterImage, username, userId, caption, imageUrl, noLikes, user }) {
+function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }) {
 
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
     const [show, setShow] = useState('like2');
     const [show2, setShow2] = useState('textforlike');
+    const [posterImage, setPosterImage] = useState('')
+
+    const [postUser, setPostUser] = useState();
+
+    useEffect(() => {
+        if(postUserId) {
+            db.collection('users').doc(postUserId).onSnapshot((snapshot) => {
+                setPostUser(snapshot.data())
+            })
+        }
+
+        console.log(postUserId)
+    }, [postUserId])
 
     useEffect(() => {
         let unsubscribe;
@@ -27,7 +41,7 @@ function Post({ postId, origuser, posterImage, username, userId, caption, imageU
         db.collection("posts")
             .doc(postId)
             .collection("likes")
-            .doc(userId)
+            .doc(user.uid)
             .get()
             .then(doc2 => {
                 if (doc2.data()) {
@@ -40,7 +54,7 @@ function Post({ postId, origuser, posterImage, username, userId, caption, imageU
                     }
                 }
             })
-    }, [postId, userId]);
+    }, [postId, user.uid]);
 
     const likeHandle = (event) => {
         event.preventDefault();
@@ -62,13 +76,13 @@ function Post({ postId, origuser, posterImage, username, userId, caption, imageU
                     db.collection("posts")
                         .doc(postId)
                         .collection("likes")
-                        .doc(userId)
+                        .doc(user.uid)
                         .get()
                         .then(doc2 => {
                             if (doc2.data()) {
                                 console.log(doc2.data())
                             } else {
-                                db.collection("posts").doc(postId).collection("likes").doc(userId).set({
+                                db.collection("posts").doc(postId).collection("likes").doc(user.uid).set({
                                     likes: 1
                                 });
                                 db.collection('posts').doc(postId).update({
@@ -78,7 +92,7 @@ function Post({ postId, origuser, posterImage, username, userId, caption, imageU
                         })
 
                 } else {
-                    db.collection('posts').doc(postId).collection('likes').doc(userId).delete().then(function () {
+                    db.collection('posts').doc(postId).collection('likes').doc(user.uid).delete().then(function () {
                         db.collection('posts').doc(postId).update({
                             noLikes: data.noLikes - 1
                         });
@@ -94,12 +108,22 @@ function Post({ postId, origuser, posterImage, username, userId, caption, imageU
 
         db.collection("posts").doc(postId).collection("comments").add({
             text: comment,
-            username: origuser,
+            username: postUser?.displayName,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             photoURL: user?.photoURL
         });
         setComment('');
     }
+
+    useEffect(() => {
+        if(postUserId) {
+            db.collection('users').doc(postUserId).onSnapshot((snapshot) => {
+                setPosterImage(snapshot.data().photoURL)
+                console.log(snapshot.data())
+            })
+        }
+    }, [])
+    
 
     return (
         <div className="post">
@@ -107,9 +131,11 @@ function Post({ postId, origuser, posterImage, username, userId, caption, imageU
                 <Avatar
                     className="post__avatar"
                     alt=""
-                    src={posterImage}
+                    src={posterImage !== '' && posterImage}
                 />
-                <h3>{username}</h3>
+                <h3 onClick={() => {
+                    window.location.href=  `/${username}/${user?.uid}`
+                }} style={{cursor: 'pointer'}}>{username}</h3>
                 <i class="post__verified" />
             </div>
 
@@ -155,7 +181,7 @@ function Post({ postId, origuser, posterImage, username, userId, caption, imageU
 
             {
                 comments.map((comment) => (
-                    <div className={`comments__show ${comment.username == origuser && 'myself'}`}>
+                    <div className={`comments__show ${comment.username == postUser?.displayName && 'myself'}`}>
                         <Avatar
                             className="post__avatar2"
                             alt=""
