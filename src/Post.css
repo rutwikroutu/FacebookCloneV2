@@ -118,18 +118,14 @@ user-select: none;
 
 
 .post__like {
-    background-image: url(https://facebook.com/rsrc.php/v3/y4/r/mSeZZaYLCYt.png);
-    background-size: 97px 1700px;
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-position: -57px -1448px;
     margin-left: 10px;
     margin-bottom : 10px;
     margin-top: 5px;
     margin-right: -2px;
-    z-index: 100;
+    z-index: 1000;
+    height: 18px;
+    vertical-align: top;
+    margin-top: 5px;
 }
 
 .post__likeandlove {
@@ -185,26 +181,26 @@ user-select: none;
 }
 
 .like2 {
-    background-image: url(https://facebook.com/rsrc.php/v3/y4/r/mSeZZaYLCYt.png);
-    background-size: 97px 1700px;
+    background-image: url(https://i.ibb.co/XLsnX3w/del.png);
+    background-size: 20px 20px;
     background-repeat: no-repeat;
     display: inline-block;
-    width: 18px;
     height: 18px;
-    background-position: -49px -1388px;
-    margin-right: 6px;
+    width: 18px;
+    margin-right: 5px;
     -webkit-filter: brightness(0) invert(62%) sepia(98%) saturate(12%) hue-rotate(175deg) brightness(90%) contrast(96%);
 }
 
 
 .like2.blue {
-    background-image: url(https://facebook.com/rsrc.php/v3/yC/r/GAqQdmSJnsS.png);
-    background-size: 25px 1295px;
+    background-image: url(https://facebook.com/rsrc.php/v3/yL/r/bDzlg9kYh_x.png);
+    background-size: 26px 766px;
     background-repeat: no-repeat;
     display: inline-block;
+    margin-right: 5px;
     width: 18px;
     height: 18px;
-    background-position: 0 -275px;
+    background-position: 0 -200px;
     animation: scaleAndTilt .5s;
     -webkit-filter: brightness(100%) !important;
 }
@@ -276,15 +272,18 @@ user-select: none;
 }
 
 .comment2 {
-    background-image: url(https://facebook.com/rsrc.php/v3/y4/r/mSeZZaYLCYt.png);
-    background-size: 97px 1700px;
+    background-image: url(https://i.ibb.co/Qcd2Xm0/del.png);
     background-repeat: no-repeat;
+    background-size: 26px 766px;
+    background-position: 0 -160px;
     display: inline-block;
-    width: 18px;
     height: 18px;
+    margin: 0 6px -3px 0;
+    min-width: 18px;
+    position: relative;
+    top: -2px;
+    width: 18px;
     -webkit-filter: brightness(0) invert(62%) sepia(98%) saturate(12%) hue-rotate(175deg) brightness(90%) contrast(96%);
-    background-position: -49px -1350px;
-    margin-right: 6px;
 }
 
 .comment {
@@ -335,14 +334,16 @@ user-select: none;
 }
 
 .share2 {
-    background-image: url(https://facebook.com/rsrc.php/v3/y4/r/mSeZZaYLCYt.png);
-    background-size: 97px 1700px;
-    -webkit-filter: brightness(0) invert(62%) sepia(98%) saturate(12%) hue-rotate(175deg) brightness(90%) contrast(96%);
+    background-image: url(https://i.ibb.co/Qcd2Xm0/del.png);
+    background-size: 26px 766px;
     background-repeat: no-repeat;
     display: inline-block;
     width: 18px;
     height: 18px;
-    background-position: -68px -1407px;
+    background-position: 0 -280px;
+    -webkit-filter: brightness(0) invert(62%) sepia(98%) saturate(12%) hue-rotate(175deg) brightness(90%) contrast(96%);
+    background-repeat: no-repeat;
+    display: inline-block;
     margin-right: 6px;
 }
 
